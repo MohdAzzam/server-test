@@ -5,7 +5,10 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
-app.post('/',(req,res)=>{
+app.get("/",(req,res)=>{
+    res.send("Welcome to our app")
+})
+app.post('/date',(req,res)=>{
     const country = req.body.country;
     const utcOffset = req.body.utcOffset;
     let time = new Date();
